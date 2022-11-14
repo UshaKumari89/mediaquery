@@ -1,12 +1,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-*{
+* {
     box-sizing: border-box;
 }
-body{
+/*general style*/
+body {
     width: 100vw;
     height: 100vh;
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    background-color: #000;
+   
+}
+/*general style for wrapper*/
+.wrapper {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header"
+        "aside-left"
+        "main-content"
+        "aside-right"
+        "footer"; 
+    margin: 5rem auto;
+    background-color: aliceblue;
+    max-width: 375px;
+    gap: .3rem;
+    padding: .3rem;
+    
+    
+}
+/* style for header*/
+.header {
+    grid-area: header;
+    display: flex;
+    background-color: #480063;
+    height: 3rem;
+
+}
+/* style for aside*/
+.aside-left {
+    grid-area: aside-left;
+
+}
+/* style for aside boxes*/
+.aside-left-boxes {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: .5rem;
+
+}
+/* style for aside box*/
+.left-box {
+    background-color: #B2008A;
+    height: 2rem;
+
+}
+/* style for main-content*/
+.main-content {
+    grid-area: main-content;
+    display: flex;
+    height:8rem
+
+}
+/* style for right aside bar*/
+.aside-right {
+    grid-area: aside-right;
+    display: flex;
+    background-color: #FD96A9;
+    /* height: 5rem */
+}
+/* style for footer*/
+.footer {
+ grid-area: footer;
+    display: flex;
+    height: 3rem;
+    background-color: #C1C99A;
+
+}
+
+/*media query for bigger screen*/
+@media only screen and (min-width: 800px){
+.wrapper{
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+    "header header header header"
+    "aside-left main-content main-content aside-right"
+ 
+    "footer footer footer footer";
+
+}
+ 
+	
 }
